@@ -21,16 +21,14 @@
 </head>
 <body>
 	<header>
-		<div id="top-header">
-			@include('layouts.partials.top_header')
-		</div>
-		<div id="header">
-			@include('layouts.partials.header')
-		</div>
-	</header>
-	<div id="navigation">
+		@include('layouts.partials.top_header')
+		@include('layouts.partials.header')
 		@include('layouts.partials.navigation')
-	</div>
+	</header>
+
+	@yield('top_section')
+	@yield('new_products')
+
 	<div id="footer">
 		@include('layouts.partials.footer')
 	</div>

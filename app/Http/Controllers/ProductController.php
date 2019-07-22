@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Category;
+use App\Category;
 use App\Product;
 
-class HomeController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $new_products = Product::orderBy('created_at','desc')->limit(10)->get();
-        // dd($new_products);
-        return view('home',compact('new_products'));
+
     }
 
     /**
@@ -84,5 +82,11 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getListProductByCategory($id)
+    {
+    	$category = Category::with('product')->find($id);
+    	return view('listproductbycategory', compact('category'));
     }
 }

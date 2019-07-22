@@ -1,17 +1,15 @@
-<div class="container">
-	<!-- responsive-nav -->
-	<div id="responsive-nav">
-		<!-- NAV -->
-		<ul class="main-nav nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="#">Hot Deals</a></li>
-			<li><a href="#">Categories</a></li>
-			<li><a href="#">Laptops</a></li>
-			<li><a href="#">Smartphones</a></li>
-			<li><a href="#">Cameras</a></li>
-			<li><a href="#">Accessories</a></li>
-		</ul>
-		<!-- /NAV -->
+<div id="navigation">
+	<div class="container">
+		<!-- responsive-nav -->
+		<div id="responsive-nav">
+			<!-- NAV -->
+			<ul class="main-nav nav navbar-nav">
+				@foreach ($categories as $key => $category)
+				<li><a href="{{ route('showListProductByCategory', $category->id) }}" class="{{ $key == 0  ? 'active' : ' ' }}" >{{ $category->name }}</a></li>
+				@endforeach
+			</ul>
+			<!-- /NAV -->
+		</div>
+		<!-- /responsive-nav -->
 	</div>
-	<!-- /responsive-nav -->
 </div>
