@@ -16,7 +16,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+<<<<<<< HEAD
         'name', 'email', 'password','firstname','lastname','phone','address','gender','street','date_of_birth','role_id'
+=======
+        'name', 'email', 'password',
+>>>>>>> 283e86f147944388b24c708121ce5bd4e41253f4
     ];
 
     /**
@@ -36,6 +40,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+<<<<<<< HEAD
 
     public function products()
     {   
@@ -60,4 +65,6 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Comment');
     }
+=======
+>>>>>>> 283e86f147944388b24c708121ce5bd4e41253f4
 }
